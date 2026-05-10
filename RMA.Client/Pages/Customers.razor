@@ -1,0 +1,59 @@
+@page "/customers"
+@inject RMA.Client.Services.CustomerService CustomerService
+@inject ISnackbar Snackbar
+
+<MudText Typo="Typo.h3" GutterBottom="true">Customers</MudText>
+
+<MudTable Items="@customers" Dense="true" Hover="true" Striped="true" Filter="new Func<CustomerDto,bool>(FilterFunc)" @bind-SelectedItem="selectedItem">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Customer List</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>ID</MudTh>
+        <MudTh>Name</MudTh>
+        <MudTh>Email</MudTh>
+        <MudTh>Phone</MudTh>
+        <MudTh>Address</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="ID">@context.Id</MudTd>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="Email">@context.Email</MudTd>
+        <MudTd DataLabel="Phone">@context.Phone</MudTd>
+        <MudTd DataLabel="Address">@context.Address</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+@code {
+    private List<CustomerDto> customers = new List<CustomerDto>();
+    private string searchString = "";
+    private CustomerDto selectedItem = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        customers = await CustomerService.GetCustomersAsync();
+    }
+
+    private bool FilterFunc(CustomerDto element)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Name != null && element.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Email != null && element.Email.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Phone != null && element.Phone.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    }
+}

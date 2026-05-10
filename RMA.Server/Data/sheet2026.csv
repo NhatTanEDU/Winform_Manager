@@ -1,0 +1,339 @@
+ ,Khách hàng,Thông Tin KH,Tên TB,Serial/Cấu Hình,Phụ Kiện,Phiếu Đề Xuất,,Ngày nhận,Chế Độ,Ngày bảo hành,Lỗi KH báo,Thực tế kiểm tra,Hướng khắc phục,Tên NCC,Người liên hệ,Ngày gửi NCC,ĐV Vận chuyển,Người Phụ Trách,Tình trạng TB sau sửa chữa,Vị Trí,Tình trạng thiết bị,Ghi chú ,
+1,PSB,A.Huy-DLTB,Dell S2725H ,"ST: DTZQ534 
+S/N: VN-0D11K5-WS700-53B-CQBL-A03",Chân đế,,,06/01/2026,Bảo Hành,29/06/2028,Chớp tắt không lên hình,Chớp tắt màn hình + không hiển thị(màn đen),Gọi BH,Dell Support,"Tổng đài DELL
+18004851",,,Tân,Done,,,"Đã gọi BH
+Hàng đã về, đợi trễ
+- Đã trả hàng 12/01/2026 (Tan-Hung trả)",
+2,PMC,Đào Duy Quang (PP TCNS),Laptop HP 240 G9,"5CG24346MH
+001.018.054.0015",Sạc HP 45W,,,09/01/2026,Sửa,Expired,không lên nguồn,không lên nguồn mặc dù đã cắm sạc,KG,Ko gian,,,,Tân,Done,,,"Gửi KG
+KG ko sửa trả về, đợi trả
+- Vương đến lấy ngày 27/01/2026",
+3,PMC,,PC Dell Optiplex,"HMVFHB4
+001.017.037.0106",,,,09/01/2026,Bảo Hành," November 3, 2027",máy khởi động liên tục,"máy bị khởi động liên tục dù đã cài win, lỗi do phần mềm cỉa máy ","Tổng đài DELL 
+18004851","Tổng đài DELL 
+18004851","Tổng đài DELL 
+18004851",,,Tân,Done,,,"ngày 10/03/2026 Kĩ thuật tới kiểm tra và bảo hành
+đã thay main, máy đang test và đợi trả
+Tan trả (12-3-2026)",
+4,PMC,,UPS APC BVX1200LI-MS,"9B2425A07059
+001.020.073.1129",,,,09/01/2026,Bảo hành,12/04/2025 (24th),hỏng,"ác quy bị chai, sạc 1 tiếng, cắm quạt được 10p thì bị sập",,KNX,KNX, ,xe toàn thắng,Tân,Done,,,"đã gửi xe toàn thắng
+hàng đã về đợi trả
+đã trả (09-02-2026)",
+5,PMC,,UPS APC BVX1200LI-MS,"9B2425A07047
+001.020.073.1196",,,,09/01/2026,Bảo hành,12/04/2025 (24th),hỏng,"máy cắm nguồn nhưng không nhận sạc, cắm sạc vẫn bị sập nguồn",,KNX,KNX,,xe toàn thắng,Tân,Done,,,"đã gửi xe toàn thắng
+hàng đã về đợi trả
+đã trả (09-02-2026)",
+6,PMC,,UPS SANTAK TG1250PRO,H501-A1940800153,,,,09/01/2026,Bảo Hành,23/11/2028,hỏng,máy cắm nguồn nhưng không nhận sạc,"gửi Nguyen Kim, BH Ecotek",NGUYEN KIM + BH Ecotek,,,xe a Phúc,Tân,Done,,,"Gửi Nguyên Kim
+đợi NK gửi hàng về, BH qua hãng Ecotek
+- đã gửi BH Ecotek
+- hàng đã về đợi trả",
+7,PMC,,Bàn phím EK104,EK104GBD250400614,,,,09/01/2026,Bảo Hành,23/07/2027,"Lỗi phím Y, nhiêu bàn phím",không thấy lỗi gì ,,Sieu toc,,,,Tân,Done,,,"Đợi trả
+đã trả 04/02/2026",
+8,PPS,anh Lý,Cudy 8-port Gigabit Industrial PoE + Switch,IG1008P252200001,,,,13/01/2026,Bảo Hành,05/01/2026 (12th),lỗi,lỗi vô có tín hiệu nhưng khi xuất thì không có tín hiệu,"Phòng BH công ty An Phát,286/1 Trần Hưng Đạo, P.Cầu Ông Lãnh, Q1 
+, TP.HCM
+0908 652 086",Đại diện: Lâm Quốc Hoa,"Lâm Quốc Hoa
+0908 652 086",,xe a Phúc,Tân,Done,,,"đã gửi xe a Phúc
+- BH về đợi trả
+- Đã đổi cho khách, thiết bị này để lại phòng kỹ thuật",
+9,VSP,"Bùi Anh Nam 2799 BMDH
+Trưởng phòng TCNS",Surface x1876,,,,,,,,chập chờn,chập chờn,KG,KG,,,xe a Phúc,Tân + Tuấn,Done,,,"KG trả về, không sửa
+Ngữ trả",
+10,PGS,Tàu Researcher,Laptop HP EliteBook 8470p,"win 7, core i7",có Apdapter,,,tuần B ,sửa chữa,hết BH,thay phím,thay phím,"không thay phím, không có phím để thay",,,,,Tân + Nông,Done,,,"không thay phím, không có phím để thay, trả KH
+Tân trả (19-01-2026)
+- bàn phím về thay lại",
+11,PGS,QLDA,UPS APC BVX1200LI-MS,9B2434A11081,,,,21/01/2026,Bảo hành,17/01/2026 (12thg),lỗi kêu rè rè,"Máy vẫn khởi động lên nguồn (đèn xanh sáng), nhưng phát ra tiếng kêu ""rè rè"" lớn liên tục từ bên trong thân máy.",KNX,KNX,KNX,,xe toàn thắng,Tân,Done,,,"Gửi xe toàn thắng
+hàng về đợi trả
+đã trả (Tân trả)",
+14,VSP,A.Văn ban TBCD-XNCD527,PC DELL Vostro 3470,ST: 57KZKQ2,,,,04/02/2026,Sửa chữa,Hết BH,hư main,hỏng main,Nguyễn Nghĩa,Nguyễn Nghĩa,Nguyễn Nghĩa,,,Tân,Done,CTY,,"Nguyễn Nghĩa báo sửa main: 800k
+đã mang về cty (02-04-2026), đợi trả or mang đi sửa
+Tuấn trả (10-4-2026) cho Tiên",
+15,VSP,NRDM (14051996),Laptop DELL XPS 13 9310, ST:8435DB3,có Apdapter + túi,,,04/02/2026,Sữa chữa,Hết BH,qua đêm mất hình ,cắm sạc không lên nguồn ,KG,KG,,,xe a Phúc,Tân,Done,,,"đã gửi KG
+không sửa trả hàng về (đã trả về ) 
+đã trả (04-03-2026 Tuấn trả)",
+16,PMC,,UPS APC BVX1200LI-MS,"001.020.073.0964
+9B2220A29578",,"PDX sửa số
+004/2026/HCTH",,02/02/2026,Sữa chữa,13/01/2023 (24th),Hỏng nguồn,Hỏng nguồn,"PDX sửa số
+004/2026/HCTH",Ecotek,Ecotek,,,Tân,Done,"Ecotek 
+CTY",xong,"đợi Ecotek qua kiểm tra
+đang đợi khách hàng nhận sửa
+Ecotek đã lấy về 
+a Vương tới lấy (22-04-26)",
+17,PMC,,UPS APC BVX1200LI-MS,"001.020.073.0642
+9B2233A23228",,"PDX sửa số
+004/2026/HCTH",,02/02/2026,Sữa chữa,2023 (24th),Hỏng nguồn,Hỏng nguồn,"PDX sửa số
+004/2026/HCTH",Ecotek,Ecotek,,,Tân,Done,"Ecotek 
+CTY",xong,"đợi Ecotek qua kiểm tra
+đang đợi khách hàng nhận sửa
+Ecotek đã lấy về 
+a Vương tới lấy (22-04-26)",
+18,PMC,,UPS APC BVX1200LI-MS,"001.020.073.1239
+9B2244A17546",,"PDX sửa số
+004/2026/HCTH",,02/02/2026,Sữa chữa,27/05/2025 (24th),Hỏng nguồn,lên nguồn đang kiểm tra hiệu năng,"PDX sửa số
+004/2026/HCTH",,,,,Tân,Done,,,Tan trả (12-3-2026),
+19,PMC,,UPS APC BVX1200LI-MS,"001.020.073.0351
+9B2229A23494",,"PDX sửa số
+004/2026/HCTH",,02/02/2026,Sữa chữa,Hết BH,Hỏng nguồn,Hỏng nguồn,"PDX sửa số
+004/2026/HCTH",Ecotek,Ecotek,,,Tân,Done,"Ecotek 
+CTY",xong,"đợi Ecotek qua kiểm tra
+đang đợi khách hàng nhận sửa
+Ecotek đã lấy về 
+a Vương tới lấy (22-04-26)",
+20,PMC,,UPS APC BVX1200LI-MS,"001.020.073.0923
+S/N: 9B2421A03991",,"PDX sửa số
+018/2026/HCTH",,02/02/2026,Sữa chữa,Hết BH,Hỏng nguồn,lên nguồn đang kiểm tra hiệu năng,"PDX sửa số
+018/2026/HCTH",,,,,Tân,Done,,,Tan trả (12-3-2026),
+21,PMC,,UPS APC BVX1200LI-MS,"001.020.073.0336
+9B2234A10687",,"PDX sửa số
+018/2026/HCTH",,02/02/2026,Sữa chữa,09/10/2023 (24th),Hỏng nguồn,Hỏng nguồn,"PDX sửa số
+018/2026/HCTH",Ecotek,Ecotek,,,Tân,Done,"Ecotek 
+CTY",xong,"đợi Ecotek qua kiểm tra
+Ecotek mang về
+a Vương tới lấy (22-04-26)",
+22,PMC,,UPS APC BVX1200LI-MS,"001.020.073.0114
+9B2212A02473",,"PDX sửa số
+018/2026/HCTH",,02/02/2026,Sữa chữa,Hết BH,Hỏng nguồn,Hỏng nguồn,"PDX sửa số
+018/2026/HCTH",Ecotek,Ecotek,,,Tân,Done,"Ecotek 
+CTY",xong,"đợi Ecotek qua kiểm tra
+đang đợi khách hàng nhận sửa
+Ecotek đã lấy về 
+a Vương tới lấy (22-04-26)",
+23,PMC,,UPS APC BVX1200LI-MS,"001.020.073.1062
+9B2425A07988",,,,02/02/2026,BH,27/03/2025(24th),Hỏng nguồn,"lên nguồn đang kiểm tra hiệu năng
+máy bấm không lên nguồn",Bảo hành,KNX,KNX,,xe toàn thắng,Tân,Urgency,KNX,Nhận sửa,,
+24,PMC,,UPS APC BVX1200LI-MS,"001.020.73.0210
+9B2344A15387",,,,02/02/2026,Bảo hành,21/12/2023(24th),Hỏng nguồn,Hỏng nguồn,Sữa chữa,Ecotek ,Ecotek ,,,Tân,Done,"Ecotek 
+CTY",xong,"đợi Ecotek qua kiểm tra
+đang đợi khách hàng nhận sửa
+Ecotek đã lấy về 
+a Vương tới lấy (22-04-26)",
+25,PMC,,UPS SANTAK TG1250,"001.021.016.0068
+H481-A8401400652",,,,02/02/2026,Bảo hành,22/10/2028,Hỏng nguồn,Hỏng nguồn,Bảo hành,Ecotek,Ecotek,,,Tân,Done,Ecotek ,,"qua tết bảo hành
+sáng t2 09/03/2026
+Ecotek đã mang về. 
+hàng đã về đợi trả
+Tân trả 01-04-2026",
+26,Haduco,0972050721 Thái Haduco,Màn hình HP E24 G5 FHD,"S/N: CN44041B9X
+(P/D): 6N6E9AA.",đế chân,,,02/02/2026,Bảo hành,30/04/2027,sọc màn hình,"sọc màn hình (sọc ngang màn hình, sọc xanh, ...)",Bảo hành,HP SP,HP SP,,,Tân,Done,,,"đã gọi BH HP, đang đợi kĩ thuật bên HP lấy về kiểm tra
+- Đã gửi màn hình đi
+- Đã trả (Tân trả 05-03-2026)",
+27,PMC,,Laptop DELL Latitude 5450,"ST: F4R25C4
+EX:32939049604
+001.018.079.0125",Apdapter,,,09/02/2026,Bảo hành,26/08/2026,Lỗi không lên nguồn,cắm sạc không lên nguồn ,gọi BH,DELL SP,"Tổng đài DELL 
+18004851",,,Tân,Done,,,"Gọi bảo hành DELL 
+đang đợi a Thắng lấy hóa đơn bán máy để làm dịch vụ bảo hành 
+đang làm tài khoản BH
+Đã trả",
+28,PMC,,Apdapter Switch,"Switch: DHCS4D10
+S/N:AK0C6C9PAJ00957",,,,23/02/2026,Bảo hành,23/11/2025 (12th),Lỗi không cấp nguồn được ,Lỗi không cấp nguồn được ,"Hành Vũ
+445 Nguyễn An Ninh","Hành Vũ
+445 Nguyễn An Ninh","Hành Vũ
+445 Nguyễn An Ninh",,,Tân,Done,,,"Gửi bảo hành Hành Vũ (Tuấn gửi BH)
+Nông trả (25/03/2026)",
+29,PGS,,Laptop DELL Inspiron 5593,S/T: GCWTR53 ,Apdapter,,,27/02/2026,sữa chữa,"April 9, 2022",liệt bàn phím,liệt bàn phím,gửi KG sthay bàn phím,KG,KG,,xe a Phúc,Tân,Done,,,"Đang đợi bàn phím chị Hải
+gửi KG
+Tân giao (13-03-2026)",
+30,PGS,,LaserJetPro 4003dw,VNM0Y01294,,,,27/02/2026,Bảo hành,10/09/2026,"Hay bị treo máy, 0 in. 0 bấm menu được",,,Nguyên Kim,Nguyên Kim,,xe a Phúc,Tân,Done,,,"Đã gửi Nguyên Kim Bảo Hành
+hàng đã về đợi trả
+Tân trả 16-03-2026",
+31,VSP,"2460
+Vàng Hiếu Nguyên
+Ban QLHDDK",XPS 13 Plus 9320,"1DP6GK3
+lô: 09-3/12", ,,,04/03/2026,Sữa chữa,hết BH,MH không hiern thị,"MH hình không hiển thị, các tính hiệu đền led vẫn lên",KG,KG,KG,,xe a Phúc,Tân,Done,KG,xong,"  đã test oke
+Tân đã trả 08/05/26",
+32,VSP,"C.Uyên BMĐH Ban QLHDD
+DT: 0908641639","HP ENVY Notebook - 13-d049tu
+Hewlett","CND6440QTG
+lô:16-1/15",Apdapter,,,04/03/2026,Sữa chữa,hết BH,MH không hiern thị,MH không hiển thị và không lên nguồn,KG,KG,KG,,xe a Phúc,Tân,Done,KG,xong,Tân đã trả 08/05/26,
+33,VSP,"Ngô Bá Tâm-102 -AM
+Địa chất -ANL
+Viện NIPI",HP EliteBook x360 830 G7 Notebook PC,"5CG05115P0
+lô:16-1/15",Apdapter,,,04/03/2026,Sửa chữa,hết BH,MH không hiern thị,MH không hiển thị và không lên nguồn,KG,KG,KG,,xe a Phúc,Tân,Done,KG,xong,Tân đã trả 08/05/26,
+34,VSP,"Trần Thị T. Huyền
+Viện NIPI",Laptop DELL Latitude 5320,"3PP1X93
+lô: 09-3/12", túi + apdapter quấn keo,,,04/03/2026,sửa chữa,hết BH,chạy 5 phút tắt,khi mở máy thì máy bị sập nguồn ngay lập tức,KG,KG,KG,,xe a Phúc,Tân,Urgency,KG,Nhận sửa,,
+35,PGS,tầng 15,Nắp máy in kysoera ,,,,,05/03/2026,BH,2027,không rút giấy dc ,lỗi không gập được ,"BH
+","Cty TNHH TM&DV Nhật Tân HN – CN HCM
+30 Đường số 6, KDC Him Lam, P.Tân Hưng. TP.HCM
+SDT: 0933404850 (Anh Minh)
+","Cty TNHH TM&DV Nhật Tân HN – CN HCM
+30 Đường số 6, KDC Him Lam, P.Tân Hưng. TP.HCM
+SDT: 0933404850 (Anh Minh)
+",,xe a Phúc,Tân,Done,,,"gửi BH
+
+a. Nông + a. Hùng đã giao và đã lắp",
+36,PGS,Nguyễn Sĩ Duy,UPS SRT3000RMXLI,AS2214291544,,,,06/03/2026,Sửa chữa,,Báo lỗi Battery Charger Event,Báo lỗi Battery Charger Event,gọi Ecotek,,gọi Ecotek,,Ecotek,Tân,Done,,,"sáng t2 Ecotek tới kiểm tra
+Ecotek đã tới kiểm tra và báo lỗi ác quy (cần thay ác quy) sẽ gửi báo giá sau
+Đã trả ngày 24/03/2025
+",
+37,PGS,Nguyễn Sĩ Duy,Máy Trạm DELL Precision 7960 Rack,FBTKJ64,,,,06/03/2026,Sửa chữa,"23/12/2024 (36th)
+January 18, 2028",Không Chạy,Không Chạy,gọi DELL ,Gọi DELL,Gọi DELL,,,Tân,Done,,,Tân trả (13/03/2026),
+38,PGS,Nguyễn Sĩ Duy,Máy in Canon MF643cdw,,,,,06/03/2026,Sửa chữa,,Báo lỗi 015-000,,gửi Uy Phương sửa chữa,gửi Uy Phương,,,,Tân,Done,,,Tan vs a Hung a Hoang tra (20/03/2026),
+39,HAPPY SCHOOL,Lớp 3B,Máy chiếu Vivitek,FBW5722410844,,,,26/02.2026,Sửa chữa,,máy lỗi không lên,kiểm tra không có lỗi ,,,,,,Tân,Done,,,"trả lại khách
+Tan - a Hung da tra (20/03/2026)",
+40,HAPPY SCHOOL,Lớp 5,Máy chiếu Vivitek,FBX5711160868,,,,26/02.2026,Sửa chữa,,máy khỏi động kêu to,máy khỏi động kêu to,gửi Trung tâm máy chiếu VNPC,gửi Trung tâm máy chiếu VNPC,"gửi Trung tâm máy chiếu VNPC
+73/12 Tân Sơn Nhì, P.Tân Sơn Nhì, QUận Tân Phú, TP HCM",,xe a Phúc,Tân,Done,"Trung tâm máy chiếu VNPC
+hàng đã về cty 01-04-2026",,"đã gửi trung tâm máy chiếu
+máy chiếu đã về đợi trả
+Tân trả 01-04-2026",
+41,PGS,Ngọc TM,UPS APC BVX1200LI-MS,9B2431A29876,,,,12/03/2026,BH,,Lôi,Lỗi,KNX,KNX,KNX,,xe Toàn Thắng,Tân,Urgency,"KNX
+về cty (03-04-2026)",hoàn thành_chờ giao cho KH,"a Nhân đã báo lỗi KNX , mang đi gửi 
+hàng đã về đợi trả (03-04-2026)
+đã gọi cho a Nhân hàng về, khi nào cần a Nhân bảo trả sau",
+42,PGS,,UPS APC BVX1200LI-MS,9B2344A14498,,,,12/03/2026,BH,,Không lên nguồn,không lên nguồn,KNX,KNX,KNX,,xe Toàn Thắng,Tân,Urgency,"KNX
+về cty (03-04-2026)",hoàn thành_chờ giao cho KH,"a Nhân đã báo lỗi KNX , mang đi gửi 
+hàng đã về đợi trả (03-04-2026)
+đã gọi cho a Nhân hàng về, khi nào cần a Nhân bảo trả sau",
+43,PMC,"
+",Laptop DELL XPS 13 7390,"005.111.140.0001
+S/N: JWNVQ73",APDAPTER,,,12/03/2026,Sửa chữa," December 12, 2021","hỏng màn hình, bàn phím hỏng","hỏng màn hình, bàn phím hỏng",KG,KG,KG,,Xe a Phúc,Tân,Done,CTY,,"không có màn thay trả hàng về
+đang đợi Adapter bên KG
+đã có adapter. đang đợi trả
+Tân trả 01-04-2026",
+45,PMC,,UPS APC 1200,"001.020.073.0794
+9B2344A15500",,,,12/03.2026,Bảo hành,,hỏng nguồn,hỏng nguồn,KNX,KNX,KNX,,xe toàn thắng,Tân,Done,"KNX
+về cty (03-04-2026)",,"hàng đã về đợi trả (03-04-2026)
+TAN ĐÃ TRẢ (06-04-2026)",
+46,PMC,,UPS APC 1200,"001.020.073.0996
+9B2425A07222",,,,12/03.2026,Bảo hành,,hỏng nguồn,kiểm tra máy lên nguồn,,,,,,Tân,Done,KNX,,Tân trả 01-04-2026,
+47,PMC,,Máy tính bàn HP AIO ProOne 240 G10,8CC524NL4,,,,12/03/2026,Bảo hành ,,Bàn phím chuột kết nôi chập chờ,đang kiểm tra,,,,,,Tân,Done,CTY,,Tân trả 01-04-2026,
+48,VSP,"Phòng XDCB-BMĐH
+Trần Phúc Lợi",Máy in HP Color LaserJet M750,lô 09-1,,,,12/03/2026,Sửa chữa,,Máy in bị lỗi,,gửi Huy Phương,gửi Huy Phương,"Huy Phương
+465 Nguyễn An Ninh, Phường 9, Tam Thắng, HCM
+0935606886",,,Tân,Done," Huy Phương
+đã về CTY",xong,"Chờ Huy Huy Phương báo giá
+đang đợi chị Hải làm hồ sơ báo giá đẻ đi trả
+Tuấn + Hùng trả 17/04/2026",
+49,VSP,"Ban VHMDK 
+Ngô Thế Quỳnh",Máy in màu Canon HW,lô 04-3,,,,12/03/2026,Sửa chữa,,"mực nhòe, màu không đều",,gửi Huy Phương,gửi Huy Phương,gửi Huy Phương,,,Tân,Done, Huy Phương,xong,"Chờ Huy Huy Phương báo giá
+đã báo Huy Phương sửa
+đã trả 29/04/2026",
+50,VSP,"Lâm Thi Hường
+Viện NIPI",PC DELL INSPIRON 3881,S/N: B9T2G93,,,,12/03/2026,Sửa chữa,"December 25, 2021",hỏng mainboard,,Nguyễn Nghĩa,Nguyễn Nghĩa,Nguyễn Nghĩa,,,Tân,Done,Nguyễn Nghĩa,,"hiện tại ko thấy ở cty, cần hỏi lại
+Hiện tại đang Nguyễn Nghĩa. 
+khách hàng ko sửa, cần trả lại.
+Tân + Hùng đã trả (02-04-2026)",
+51,PGS,Nguyễn Nhật Minh,UPS SRT3000RMXLI,S/N:AS2244392987,,,,13/03/2026,Sửa chữa,hết BH,Báo lỗi Battery Charger Event,báo lỗi đỏ pin,gửi Ecotek ,gửi Ecotek ,gửi Ecotek ,,,Tân,Done,,,Đã trả ngày 24/03/2025,
+52,VSP,Nguyễn Thị Thu Trang,PC Lenovo V50T,S/N: PC22SV48,,,,13/03/2026,Sửa chữa,hết bảo hành,Không lên nguồn,không lên nguồn,Nguyễn Nghĩa,Nguyễn Nghĩa,Nguyễn Nghĩa,,,Tân,Done,Nguyễn Nghĩa,,"Nguyễn Nghĩa báo sửa nguồn, main: 1500k
+khách không sửa cần trả lại
+Tân + Hùng đã trả (02-04-2026)",
+53,VSP (TTYT),"(TTYT)
+Người dùng: Nguyễn Thị Vân
+Nguyễn Quang Hưng",Màn hình DELL LCD DKLL S2725H ,S/T: FV0R534,,,,16/03/2026,bảo hành,08/12/2025 (12th),màn hình chợp tắt khi sài lâu và sau đó xuất hiện hiện tượng sọc màn hình (sọc màn trắng),"Kiểm tra không thấy lỗi, máy hoạt động bình thường",,,,,,Tân,Done,,,"Tân trả 23/03/2026
+nếu có lỗi tương tự thì thay cổng chuyển", 
+54,Uy Việt ,,Wifi TPlink,S/N: 2254787002468,nguồn POE,,,17/03/2026,bảo hành,22/07/2026 (12thg),tốc độ chỉ lên được 10MB,tốc độ chỉ lên được 100MB,Tân Niềm Tin,Tân Niềm Tin,"Công ty Cổ phần Phân Phối Tân Niềm Tin
+Địa chỉ: 181/6 Đường 3 tháng 2 , - Phường 11 - Quận 10 - TP Hồ Chí Minh
+SĐT: (028) 39.257.267 (Ms. Thúy) 
+ 0907.287.743 (Mr Thanh
+",19/03/2026,xe a Phúc,Tân,Done,"Tân Niềm Tin
+về CTY (09-04-2026)
+",,"Hàng 1 đổi 1. Đang đợi gửi hàng về CTY
+03-04-2026 đã có hàng đang gửi xe chở về cty
+hàng đã về đợi trả
+hàng đổi  (S/N:225C10K000451) 
+Tân đã trả (13-04-2026)",
+55,PMC,,UPS APC 1200,"S/N: 9B2431A31008
+001.020.073.1226",,,,23/03/2026,Bảo hành,27/05/2025 (24th),kHÔNG VÔ NGUỒN,"lỖI KHÔNG LÊN NGUỒN, CẮM NGUỒN KÊU TO, HÚ CÒI",KNX,KNX,KNX,,XE TOÀN THẮNG,TÂN,Done,"KNX
+về CTY (03-04-2026)",,"GỬI KNX
+hiện còn đang cty
+đã gửi KNX
+hàng đã về đợi trả 03-04-2026
+TAN ĐÃ TRẢ (06-04-2026)",
+56,PMC,,Bàn Phím LaptopDELL 5450,,,,,23/03/2026,Bảo hành,06/03/2026,không tích hợp với Laotop ,Đổi bàn phím đúng mã,KG,KG,KG,,,TÂn,Done,KG,,đã trả 02-04-2026 (bàn phím thay thế có mã 7420),    
+57,VSP,,Laptop DELL Inpiron 7460,S/N: BNZHY32,có adapter,,,25/03/2026,sửa chữa,16/04/2019,"cảm ứng không hoạt động, Pin hư",Bấm nguồn không lên,KG,KG,"Công ty Laptop Không Gian 
+Địa chỉ: 177 Nguyễn Thượng Hiền, P6, Quận Bình Thạnh, HCM
+SDT: 0938.881.872
+",,xe a Phúc,Tân,Urgency,KG,Chờ sửa,"gửi KG 28-03-2026
+Pin phùng hư ",
+58,VSP,"TẠ KIM OANH, VIÊN NIPI
+lô 09-2/09",HP ZBook Firefly 14 inch G8 Mobile Workstation PC IDS Base Model,S/N: 5CG2118BC9," 
+ 	
+có adapter
+",,,31/03/2026,sữa chữa,hết bảo hành,lỗi không lên nguồn," kiểm tra ko lên nguồn, ko thấy tín hiệu chợp chờn",KG,KG,"Công ty Laptop Không Gian 
+Địa chỉ: 177 Nguyễn Thượng Hiền, P6, Quận Bình Thạnh, HCM
+SDT: 0938.881.872",01/04/2026,xe a Phúc,Tân,Done,Cty,,"Main bị cháy nặng không thể sửa được, trả về
+Tân đã trả ngày 14/04/2026",
+59,Uy Việt ,,HP ProOne 240 G10 i3N300 8GB/256GB PC (9H0A7PT),"S/N:  màn hình bể ko hiển thị, ko lấy dc sn",,,,31/03/2026,Sửa chữa,,bể mà n hình,"Nứt vỡ tấm nền, Móp méo khung viền, Bong tróc lớp phủ, Chảy mực, Sọc màn hình, Mất khả năng hiển thị nội dung, Gãy chấu chân đế",CÔNG TY TNHH CÔNG NGHỆ PERFECT (Tâm Tịnh),CÔNG TY TNHH CÔNG NGHỆ PERFECT (Tâm Tịnh),"CÔNG TY TNHH CÔNG NGHỆ PERFECT
+Mã số thuế:  0316298791
+Email: congngheperfect@gmail.com
+Địa chỉ: 99/14 Đường số 1, Phường An Hội Đông, Thành phố Hồ Chí Minh, Việt Nam
+Lê Thị Bích Thuỷ (0938.708081).
+Email nhận VAT: congngheperfect@gmail.com
+",01/04/2026,xe a Phúc,Tân,Done,"PERFECT (Tâm Tịnh)
+đã về cty",,"ko sửa trả về đang đợi trả
+Tân đã trả ngày 13-04-2026",
+60,PMC,Lâm Anh Tuấn (PKH),Laptop HP 240 G9,"S/N: 5CG2434CG9
+001.018.054.0016",apdapter,PDX số 51/2026/HCTH,,06/04/2026,Sửa chữa,hết bảo hành,Màn hình nhòe giật hình,"bị nhòe màn hình, giật màn hình",KG,KG,"Công ty Laptop Không Gian 
+Địa chỉ: 177 Nguyễn Thượng Hiền, P6, Quận Bình Thạnh, HCM
+SDT: 0938.881.872",01/04/2026,xe a Phúc,TÂN,Done,"KG
+CTY (15/04/2026)",,"thay LCD new linh kiện -->1tr300 (BH 6 tháng)
+máy đã về cty 15/04/2026 
+Tân trả 15-4-2026",
+61,PMC,Mai Quốc Huân ,PC Workstation DELL Precicsion 3680,"S/N: G7BCQ34
+001.017.027.0021",,,,06/04/2026,BH,26/06/2027,hỏng ổ cứng ssd,CẮM BOX RỜI KO NHẬN SSD,GỌI BH DELL,DELL,"Tổng đài DELL 
+18004851",,,tÂN,Done,CTY,,"SSD 1 đổi 1, đang đợi kĩ thuật giao ổ cứng mới
+đã có ssd mới,
+ssd cũ S/N: 24098K4A0R12
+ssd mới S/N: 94RF70R3F4BN
+Tân trả 15-04-2026",
+62,PMC,,Màn hình DELL P2425H,"S/N: 3WNKK34
+001.019.101.0020",chân đế,,,06/04/2026,BH,13/02/2028,KHÔNG LÊN NGUỒN,"KHÔNG LÊN NGUỒN, KO CÓ TÍN HIỆU",GỌI BH DELL,DELL,"Tổng đài DELL 
+18004851",,,tÂN,Done,CTY,,"hàng BH đã về , 1 đổi 1. 
+s/t: 6693S94
+s/n: CN-OTNWWC-QDC00-5AD-1KSB-A06
+hàng về đợi trả
+Tân trả (10-04-2026)",
+63,PMC,,UPS APC 1200 ,"
+001.020.073.1378
+9B2425A06716",,,,08/04/2026,BH,24/06/2026,không lên nguồn,KHÔNG LÊN NGUỒN,KNX,KNX,KNX,08/04/2026,xe toàn thắng,Tân,Urgency,KNX,Nhận sửa,,
+64,PMC,,UPS APC 1200 ,"
+9B2431A31006
+001.020.073.1378",,,,08/04/2026,BH,30/05/2027,không tích điện,Cắm nguồn ko nhận nguồn.,KNX,KNX,KNX,08/04/2026,xe toàn thắng,Tân,Urgency,KNX,Nhận sửa,,
+65,VSP,Ngô Thế Quỳnh (Ban quản lý vận hành các mỏ dầu khí),"ASUS UX325EA-KG658W (NoteBook (System))
+","lô 04-3
+S/N: MCN0LP011204508",adapter,,,09/04/2026,BH,"27/12/2023 22:59:00
+hết BH",lỗi Mainboard,"cắm sạc máy lên nguồn, hiển thị màn hình hiển thị logo rồi lại sụp nguồn
+cắm boot thì vào dc boot, khi test cpu (AIDA64 ) trên boot thì bị sập nguồn, sau khi sập nguồn vào boot thì bị sập tiếp",KG,KG,"Công ty Laptop Không Gian 
+Địa chỉ: 177 Nguyễn Thượng Hiền, P6, Quận Bình Thạnh, HCM
+SDT: 0938.881.872",10/04/2026,xe a Phúc,Tân,Done,"KNX
+CTY (22-04-26)",xong,"Bị lỗi nguồn trên main --> 900K (BH 3 tháng)
+Pin hư chạm, thay pin mới --> 1tr350 (BH 6 tháng)
+đã sửa xong đang ở cty (22-04-2026)
+đã báo máy cho chị Hải
+Đã trả (23-4-26)",
+66,PMC ,Văn phòng số 31,Màn Hình DELL P2425h,J45MK34,CHÂN ĐẾ,,,15/04/2026,BH,05/03/2028,KHÔNG LÊN NGUỒN ,"KHÔNG CÓ TÍN HIỆU, KHÔNG HIỂN THỊ GÌ",dell,DELL,"Tổng đài DELL 
+18004851",20/04/2026,,TÂN,Done,CTY,xong,"đã gọi tổng đài DELL, 
+1 đổi 1
+ST: 6921S94
+đã trả 21/4/2026",
+67,PMC,Văn phòng số 31,Bàn phím Microsoft Surface Pro Signature Keyboard ,,bút cảm ứng,,,,Sửa chữa,,hỏng ,"đứt cáp broad kết nối, thay cáp",Ngôi sao việt,ngôi sao việt,"
+Địa chỉ 462/7 Nguyễn Tri Phương, P9, Q10, HCM
+Nguyên 0938320211 
+giờ làm việc 8h30-17h30",,",",tân,Urgency,ngôi sao việt,Chờ sửa,,
+68,VSP,"anh Khởi
+Trưởng Ban VH mỏ dầu khí",Bàn phím Microsoft Surface Pro Signature Keyboard ,lô 04-3,bút cảm ứng,,,,Sửa chữa,,hỏng ,"đứt cáp broad kết nối, thay cáp",Ngôi sao việt,Ngôi sao việt,"
+Địa chỉ 462/7 Nguyễn Tri Phương, P9, Q10, HCM 
+Nguyên 0938320211
+giờ làm việc 8h30-17h30",,,tân,Urgency,ngôi sao việt,Chờ sửa,,
+69,PVOIL,,Access Point,FP231FTF23099KCE,DC (PoE),,,23/04/2026,hết BH,,không lên nguồn ,không lên nguồn,Cty TECHHORIZON,Cty TECHHORIZON,"Cty TECHHORIZON
+Người nhận Uy : 0975 3034 95
+Địa chỉ: Số 22 Đường số 9, KDC Trung Sơn, ấp 4B, Xã Bình Hưng, Thành phố Hồ Chí Minh, Việt Nam.
+",,,TÂN,Done,cty,xong,"hết BH cần gia hạn
+không sửa trả lại hàng
+đã trả (04-05-2026)",
+70,PVOIL,,Access Point,FP231FTF23099KF5,,,,23/04/2026,hết BH,,KHÔNG LÊN NGUỒN,không lên nguồn,Cty TECHHORIZON,Cty TECHHORIZON ,"Cty TECHHORIZON
+Người nhận Uy : 0975 3034 95
+Địa chỉ: Số 22 Đường số 9, KDC Trung Sơn, ấp 4B, Xã Bình Hưng, Thành phố Hồ Chí Minh, Việt Nam.
+",,,TÂN,Done,cty,xong,"hết BH cần gia hạn 
+không sửa trả lại hàng
+đã trả (04-05-2026)",
+71,VSP,Cảng Vietso,PC HP OmniDesk Slim DT S03-0025d,S/N: 1CZ5370342,,,,23/04/2026,bảo hành,05/11/2026,hỏng ssd ,"có led ở nguồn, cắm màn hình thì hiển thị repair xong bị màn hình đen",gọi BH HP,gọi BH HP,gọi BH HP,,,Tân,Urgency,cty,Nhận sửa,ĐỔI MAIN,
+72,PGS ,a Chung Thương Mại ,Ipad air 11 + 4G 256g màu bạc,,ốp da,,,24/04.26, ,,"ko lên nguồn, cắm sạc ko nhận","ko lên nguồn, cắm sạc ko nhận",Điện máy xanh,điện máy xanh ," Điện Máy Xanh 
+330 Bình Giã, Phường Tam Thắng, Thành phố Hồ Chí Minh, Việt Nam
+Anh Nhật Minh",25/04/2026,,Tân,Urgency,Điện máy xanh,Nhận sửa,chờ thoát khách thoát icloud,
+73,Idenitsu,Đạt Thông,pin Lenovo Thinkpad,"mã sp: 70150487
+s/n: PC121KJJ",,,,05/05/2026,BH,,không lên nguồn,"CẮM ADAPTER THÌ HIỂN THỊ LOGO RỒI SẬP NGUỒN
+THÁO PIN CẮM ADAPTER THÌ MÁY VÀO WIN BÌNH THƯỜNG",Công TY TNHH THIẾT BỊ CÔNG NGHỆ NQ ,Công TY TNHH THIẾT BỊ CÔNG NGHỆ NQ ,"Công TY TNHH THIẾT BỊ CÔNG NGHỆ NQ 
+SỐ 181/13 ĐƯỜNG 3/2 PHƯỜNG 11, QUẬN 10, TP HCM 
+MST: 0317601708
+LIÊN HỆ: MR.PHƯƠNG
+HOTLINE: 0901248586 / 0937642429",11/05/2026,Viettl port,TÂN,Urgency,Công TY TNHH THIẾT BỊ CÔNG NGHỆ NQ ,Chờ sửa,,

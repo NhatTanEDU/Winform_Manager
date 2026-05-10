@@ -1,0 +1,108 @@
+@page "/tickets"
+@inject RMA.Client.Services.RmaTicketService TicketService
+@inject ISnackbar Snackbar
+
+<MudText Typo="Typo.h3" GutterBottom="true">RMA Tickets</MudText>
+
+<MudTable Items="@tickets" Dense="true" Hover="true" Striped="true" Filter="new Func<RmaTicketDto,bool>(FilterFunc)" @bind-SelectedItem="selectedItem">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Ticket List</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>ID</MudTh>
+        <MudTh>Customer</MudTh>
+        <MudTh>Device (Model - Serial)</MudTh>
+        <MudTh>Vendor</MudTh>
+        <MudTh>Problem</MudTh>
+        <MudTh>Status</MudTh>
+        <MudTh>Note</MudTh>
+        <MudTh>Date</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="ID">@context.Id</MudTd>
+        <MudTd DataLabel="Customer">
+            <MudText Typo="Typo.body2">@context.CustomerName</MudText>
+            @if(!string.IsNullOrEmpty(context.CustomerPhone)){
+                <MudText Typo="Typo.caption" Color="Color.Secondary">@context.CustomerPhone</MudText>
+            }
+        </MudTd>
+        <MudTd DataLabel="Device">
+            <MudText Typo="Typo.body2">@context.DeviceModelName</MudText>
+            <MudText Typo="Typo.caption" Color="Color.Secondary">@context.DeviceSerialNumber</MudText>
+        </MudTd>
+        <MudTd DataLabel="Vendor">@context.VendorName</MudTd>
+        <MudTd DataLabel="Problem">
+            <MudTooltip Text="@context.ProblemDescription">
+                <div style="max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    @context.ProblemDescription
+                </div>
+            </MudTooltip>
+        </MudTd>
+        <MudTd DataLabel="Status">
+            <MudChip T="string" Color="GetStatusColor(context.StatusName)" Size="Size.Small">@context.StatusName</MudChip>
+            @if(context.IsUrgent) {
+                <MudChip T="string" Color="Color.Error" Size="Size.Small" Variant="Variant.Outlined">Urgent</MudChip>
+            }
+        </MudTd>
+        <MudTd DataLabel="Note">
+            <MudTooltip Text="@context.StaffNote">
+                <div style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    @context.StaffNote
+                </div>
+            </MudTooltip>
+        </MudTd>
+        <MudTd DataLabel="Date">
+            <MudText Typo="Typo.body2">Received: @context.ReceivedDate.ToString("dd/MM/yyyy")</MudText>
+            @if(context.SentDate.HasValue){
+                <MudText Typo="Typo.caption" Color="Color.Secondary">Sent: @context.SentDate.Value.ToString("dd/MM/yyyy")</MudText>
+            }
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+@code {
+    private List<RmaTicketDto> tickets = new List<RmaTicketDto>();
+    private string searchString = "";
+    private RmaTicketDto selectedItem = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        tickets = await TicketService.GetRmaTicketsAsync();
+    }
+
+    private bool FilterFunc(RmaTicketDto element)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.CustomerName != null && element.CustomerName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.DeviceSerialNumber != null && element.DeviceSerialNumber.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.StatusName != null && element.StatusName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    }
+
+    private Color GetStatusColor(string statusName)
+    {
+        return statusName switch
+        {
+            "New" => Color.Info,
+            "In Progress" => Color.Warning,
+            "Waiting for Parts" => Color.Error,
+            "Repaired" => Color.Success,
+            "Closed" => Color.Default,
+            _ => Color.Default
+        };
+    }
+}
