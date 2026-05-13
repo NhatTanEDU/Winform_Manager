@@ -1,0 +1,146 @@
+@page "/login"
+@layout LoginLayout
+@attribute [AllowAnonymous]
+@inject AuthenticationStateProvider AuthStateProvider
+@inject NavigationManager NavigationManager
+@inject ISnackbar Snackbar
+
+<MudContainer MaxWidth="MaxWidth.Small">
+    <MudPaper Elevation="8" Class="pa-8 d-flex flex-column align-center rounded-xl" Style="background-color: #ffffff; border-top: 5px solid #0072BC;">
+        
+        <!-- Company Logo (Inline SVG matching SOLICOM logo) -->
+        <div class="mb-4 d-flex justify-center w-100">
+            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Red Top-Left -->
+                <path d="M50,50 L50,0 A50,50 0 0,0 0,50 Z" fill="#E51D24" />
+                <!-- Yellow Top-Right -->
+                <path d="M50,50 L100,50 A50,50 0 0,0 50,0 Z" fill="#FFF200" />
+                <!-- Yellow Bottom-Left -->
+                <path d="M50,50 L0,50 A50,50 0 0,0 50,100 Z" fill="#FFF200" />
+                <!-- Red Bottom-Right -->
+                <path d="M50,50 L50,100 A50,50 0 0,0 100,50 Z" fill="#E51D24" />
+                <!-- Inner Blue Circle -->
+                <circle cx="50" cy="50" r="32" fill="#0072BC" stroke="#FFFFFF" stroke-width="2" />
+                <!-- Text -->
+                <text x="50" y="55" font-family="'Arial Black', Impact, sans-serif" font-weight="900" font-size="14" fill="#E51D24" text-anchor="middle" stroke="#FFFFFF" stroke-width="0.5" letter-spacing="1">SOLICOM</text>
+            </svg>
+        </div>
+
+        <MudText Typo="Typo.h5" Class="mb-1 fw-bold" Style="color: #0072BC;">SONG LINH RMA SYSTEM</MudText>
+        <MudText Typo="Typo.body2" Class="mb-6" Style="color: #6c757d;">Please sign in to continue</MudText>
+
+        <MudForm @ref="_form" @bind-IsValid="@_isValid" Class="w-100">
+            <MudTextField @bind-Value="_model.Username" 
+                          Label="Username" 
+                          Variant="Variant.Outlined" 
+                          Required="true" 
+                          RequiredError="Username is required!"
+                          Class="mb-4"
+                          Style="background-color: #f8f9fa;"
+                          InputMode="InputMode.text" />
+
+            <MudTextField @bind-Value="_model.Password" 
+                          Label="Password" 
+                          Variant="Variant.Outlined" 
+                          InputType="@_passwordInput" 
+                          Required="true" 
+                          RequiredError="Password is required!"
+                          Class="mb-2"
+                          Style="background-color: #f8f9fa;"
+                          Adornment="Adornment.End" 
+                          AdornmentIcon="@_passwordInputIcon" 
+                          OnAdornmentClick="TogglePasswordVisibility" />
+
+            <div class="d-flex justify-space-between align-center mb-6 w-100">
+                <MudCheckBox @bind-Value="_rememberMe" Label="Remember me" Color="Color.Primary" Dense="true" Style="color: #495057;"/>
+                <MudLink Href="#" Typo="Typo.body2" Style="color: #0072BC; font-weight: 500;">Forgot password?</MudLink>
+            </div>
+
+            <MudButton Variant="Variant.Filled" 
+                       Size="Size.Large" 
+                       Class="w-100 rounded-lg py-3 fw-bold" 
+                       Style="background-color: #0072BC; color: white; transition: transform 0.2s;" 
+                       OnClick="Submit" 
+                       Disabled="@(_isLoading)">
+                @if (_isLoading)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Color="Color.Default" Indeterminate="true"/>
+                    <span class="ms-2">Signing in...</span>
+                }
+                else
+                {
+                    <span>SIGN IN</span>
+                }
+            </MudButton>
+            
+            <div class="mt-6 text-center w-100">
+                <MudText Typo="Typo.body2" Style="color: #6c757d;">
+                    Need help? <MudLink Href="#" Style="color: #E51D24; font-weight: 600;">Contact Administrator</MudLink>
+                </MudText>
+            </div>
+            
+            <div class="mt-4 pa-3 rounded text-center" style="background-color: #fff3cd; border: 1px dashed #ffe69c;">
+                <MudText Typo="Typo.caption" Style="color: #856404;">
+                    <MudIcon Icon="@Icons.Material.Filled.Info" Size="Size.Small" Class="mr-1" Style="vertical-align: text-bottom;" />
+                    Mock Data Mode: Use any username/password.
+                </MudText>
+            </div>
+        </MudForm>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    private MudForm _form;
+    private bool _isValid;
+    private bool _isLoading;
+    private LoginModel _model = new();
+    private bool _rememberMe = false;
+
+    private bool _isShowPassword;
+    private InputType _passwordInput = InputType.Password;
+    private string _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
+
+    private void TogglePasswordVisibility()
+    {
+        @if (_isShowPassword)
+        {
+            _isShowPassword = false;
+            _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
+            _passwordInput = InputType.Password;
+        }
+        else
+        {
+            _isShowPassword = true;
+            _passwordInputIcon = Icons.Material.Filled.Visibility;
+            _passwordInput = InputType.Text;
+        }
+    }
+
+    private async Task Submit()
+    {
+        await _form.Validate();
+        if (_isValid)
+        {
+            _isLoading = true;
+            
+            // Simulate network/validation delay
+            await Task.Delay(1000);
+            
+            // Call our mock auth provider
+            if (AuthStateProvider is MockAuthStateProvider mockProvider)
+            {
+                mockProvider.MarkUserAsAuthenticated(_model.Username);
+                Snackbar.Add($"Welcome back, {_model.Username}!", Severity.Success);
+                NavigationManager.NavigateTo("/");
+            }
+            
+            _isLoading = false;
+        }
+    }
+
+    public class LoginModel
+    {
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+}
