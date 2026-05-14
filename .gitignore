@@ -480,3 +480,10 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# ============================================================
+# Firebase - TUYỆT ĐỐI KHÔNG commit file này lên GitHub!
+# Lấy file từ Firebase Console > Project Settings > Service Accounts
+# ============================================================
+**/serviceAccountKey.json
+

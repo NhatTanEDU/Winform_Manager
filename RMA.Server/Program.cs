@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RMA.Server.Data;
+using RMA.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,14 @@ builder.Services.AddCors(options =>
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// ============================================================
+//  Firebase Cloud Messaging (FCM)
+//  FcmService: Singleton — khởi tạo Firebase 1 lần duy nhất
+//  RmaAlertBackgroundService: chạy ngầm, quét phiếu 14 ngày
+// ============================================================
+builder.Services.AddSingleton<IFcmService, FcmService>();
+builder.Services.AddHostedService<RmaAlertBackgroundService>();
 
 var app = builder.Build();
 
