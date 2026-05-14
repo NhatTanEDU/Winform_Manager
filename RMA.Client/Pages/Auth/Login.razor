@@ -90,7 +90,7 @@
 </MudContainer>
 
 @code {
-    private MudForm _form;
+    private MudForm? _form;
     private bool _isValid;
     private bool _isLoading;
     private LoginModel _model = new();
@@ -118,7 +118,7 @@
 
     private async Task Submit()
     {
-        await _form.Validate();
+        if (_form is not null) await _form.ValidateAsync();
         if (_isValid)
         {
             _isLoading = true;
