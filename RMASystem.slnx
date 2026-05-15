@@ -1,5 +1,0 @@
-<Solution>
-  <Project Path="RMA.Client/RMA.Client.csproj" />
-  <Project Path="RMA.Server/RMA.Server.csproj" />
-  <Project Path="RMA.Shared/RMA.Shared.csproj" />
-</Solution>
