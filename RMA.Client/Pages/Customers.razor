@@ -1,12 +1,15 @@
 @page "/customers"
 @inject RMA.Client.Services.CustomerService CustomerService
 @inject ISnackbar Snackbar
+@inject IDialogService DialogService
 
 <MudText Typo="Typo.h3" GutterBottom="true">Customers</MudText>
 
 <MudTable Items="@customers" Dense="true" Hover="true" Striped="true" Filter="new Func<CustomerDto,bool>(FilterFunc)" @bind-SelectedItem="selectedItem">
     <ToolBarContent>
         <MudText Typo="Typo.h6">Customer List</MudText>
+        <MudSpacer />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" OnClick="OpenAddCustomerDialog">Thêm Khách Hàng</MudButton>
         <MudSpacer />
         <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
@@ -42,6 +45,28 @@
     private async Task LoadData()
     {
         customers = await CustomerService.GetCustomersAsync();
+    }
+
+    private async Task OpenAddCustomerDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true, MaxWidth = MaxWidth.Small, FullWidth = true };
+        var dialog = await DialogService.ShowAsync<CustomerDialog>("Thêm Khách Hàng", options);
+        var result = await dialog.Result;
+
+        if (result is not null && !result.Canceled)
+        {
+            var newCustomer = (CustomerCreateDto)result.Data!;
+            var added = await CustomerService.CreateCustomerAsync(newCustomer);
+            if (added != null)
+            {
+                Snackbar.Add("Thêm khách hàng thành công!", Severity.Success);
+                await LoadData();
+            }
+            else
+            {
+                Snackbar.Add("Thêm khách hàng thất bại!", Severity.Error);
+            }
+        }
     }
 
     private bool FilterFunc(CustomerDto element)

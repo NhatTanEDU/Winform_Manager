@@ -1,0 +1,74 @@
+@page "/brands"
+@using RMA.Shared.DTOs
+@inject RMA.Client.Services.ReferenceDataService ReferenceService
+@inject ISnackbar Snackbar
+@inject IDialogService DialogService
+
+<MudText Typo="Typo.h3" GutterBottom="true">Brands (Vendors)</MudText>
+
+<MudTable Items="@vendors" Dense="true" Hover="true" Striped="true" Filter="new Func<VendorDto,bool>(FilterFunc)">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Brand List</MudText>
+        <MudSpacer />
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" OnClick="OpenAddBrandDialog">Thêm Hãng</MudButton>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>ID</MudTh>
+        <MudTh>Tên Hãng</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="ID">@context.Id</MudTd>
+        <MudTd DataLabel="Tên Hãng">@context.Name</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+@code {
+    private List<VendorDto> vendors = new List<VendorDto>();
+    private string searchString = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        vendors = await ReferenceService.GetVendorsAsync();
+    }
+
+    private async Task OpenAddBrandDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true, MaxWidth = MaxWidth.Small, FullWidth = true };
+        var dialog = await DialogService.ShowAsync<BrandDialog>("Thêm Hãng", options);
+        var result = await dialog.Result;
+
+        if (result is not null && !result.Canceled)
+        {
+            var newVendor = (VendorDto)result.Data!;
+            var added = await ReferenceService.CreateVendorAsync(newVendor);
+            if (added != null)
+            {
+                Snackbar.Add("Thêm hãng thành công!", Severity.Success);
+                await LoadData();
+            }
+            else
+            {
+                Snackbar.Add("Thêm hãng thất bại!", Severity.Error);
+            }
+        }
+    }
+
+    private bool FilterFunc(VendorDto element)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Name != null && element.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    }
+}

@@ -1,0 +1,37 @@
+@using RMA.Shared.DTOs
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <DialogContent>
+        <MudForm @ref="form" @bind-IsValid="@success">
+            <MudTextField @bind-Value="Customer.Name" Label="Tên khách hàng" Required="true" RequiredError="Tên là bắt buộc!" />
+            <MudTextField @bind-Value="Customer.Phone" Label="Số điện thoại" />
+            <MudTextField @bind-Value="Customer.Email" Label="Email" />
+            <MudTextField @bind-Value="Customer.Address" Label="Địa chỉ" />
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Hủy</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit" Disabled="@(!success)">Lưu</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] IMudDialogInstance MudDialog { get; set; } = null!;
+
+    public CustomerCreateDto Customer { get; set; } = new CustomerCreateDto();
+
+    bool success;
+    MudForm form = null!;
+
+    void Submit()
+    {
+        form.Validate();
+        if (form.IsValid)
+        {
+            MudDialog.Close(DialogResult.Ok(Customer));
+        }
+    }
+
+    void Cancel() => MudDialog.Cancel();
+}

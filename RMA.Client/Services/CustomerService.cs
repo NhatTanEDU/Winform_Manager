@@ -1,17 +1,13 @@
 using System.Net.Http.Json;
 using RMA.Shared.DTOs;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RMA.Client.Services;
 
 public class CustomerService
 {
     private readonly HttpClient _http;
-    private static readonly List<CustomerDto> _mockData = new()
-    {
-        new CustomerDto { Id = 1, Name = "Nguyen Van A", Phone = "0901234567", Email = "a@example.com", Address = "Hanoi", CreatedAt = DateTime.Now.AddDays(-10) },
-        new CustomerDto { Id = 2, Name = "Tran Thi B", Phone = "0987654321", Email = "b@example.com", Address = "HCMC", CreatedAt = DateTime.Now.AddDays(-5) }
-    };
-    private static int _nextId = 3;
 
     public CustomerService(HttpClient http)
     {
@@ -20,50 +16,33 @@ public class CustomerService
 
     public async Task<List<CustomerDto>> GetCustomersAsync()
     {
-        await Task.Delay(100); // Simulate network delay
-        return _mockData.ToList();
+        return await _http.GetFromJsonAsync<List<CustomerDto>>("api/customers") ?? new List<CustomerDto>();
     }
 
-    public async Task<CustomerDto?> GetCustomerAsync(int id)
+    public async Task<CustomerDto?> GetCustomerAsync(string id)
     {
-        await Task.Delay(100);
-        return _mockData.FirstOrDefault(c => c.Id == id);
+        return await _http.GetFromJsonAsync<CustomerDto>($"api/customers/{id}");
     }
 
-    public async Task<CustomerDto?> CreateCustomerAsync(CustomerDto customer)
+    public async Task<CustomerDto?> CreateCustomerAsync(CustomerCreateDto customer)
     {
-        await Task.Delay(100);
-        customer.Id = _nextId++;
-        customer.CreatedAt = DateTime.Now;
-        _mockData.Add(customer);
-        return customer;
-    }
-
-    public async Task<bool> UpdateCustomerAsync(int id, CustomerDto customer)
-    {
-        await Task.Delay(100);
-        var existing = _mockData.FirstOrDefault(c => c.Id == id);
-        if (existing != null)
+        var response = await _http.PostAsJsonAsync("api/customers", customer);
+        if (response.IsSuccessStatusCode)
         {
-            existing.Name = customer.Name;
-            existing.Phone = customer.Phone;
-            existing.Email = customer.Email;
-            existing.Address = customer.Address;
-            existing.AvatarUrl = customer.AvatarUrl;
-            return true;
+            return await response.Content.ReadFromJsonAsync<CustomerDto>();
         }
-        return false;
+        return null;
     }
 
-    public async Task<bool> DeleteCustomerAsync(int id)
+    public async Task<bool> UpdateCustomerAsync(string id, CustomerCreateDto customer)
     {
-        await Task.Delay(100);
-        var existing = _mockData.FirstOrDefault(c => c.Id == id);
-        if (existing != null)
-        {
-            _mockData.Remove(existing);
-            return true;
-        }
-        return false;
+        var response = await _http.PutAsJsonAsync($"api/customers/{id}", customer);
+        return response.IsSuccessStatusCode;
+    }
+
+    public async Task<bool> DeleteCustomerAsync(string id)
+    {
+        var response = await _http.DeleteAsync($"api/customers/{id}");
+        return response.IsSuccessStatusCode;
     }
 }

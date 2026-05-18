@@ -1,25 +1,30 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Google.Cloud.Firestore;
 
 namespace RMA.Server.Entities
 {
+    [FirestoreData]
     public class Model
     {
-        [Key]
-        public int Id { get; set; }
+        [FirestoreDocumentId]
+        public string Id { get; set; } = string.Empty;
 
         [Required]
-        public int CategoryId { get; set; }
+        [FirestoreProperty]
+        public string CategoryId { get; set; } = string.Empty;
 
         [ForeignKey(nameof(CategoryId))]
         public Category Category { get; set; } = null!;
 
         [MaxLength(100)]
+        [FirestoreProperty]
         public string? Brand { get; set; }
 
         [Required]
         [MaxLength(255)]
+        [FirestoreProperty]
         public string ModelName { get; set; } = string.Empty;
 
         // Navigation properties

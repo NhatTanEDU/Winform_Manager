@@ -4,20 +4,20 @@ namespace RMA.Shared.DTOs
 {
     public class RmaTicketDto
     {
-        public int Id { get; set; }
-        public int DeviceId { get; set; }
+        public string Id { get; set; } = string.Empty;
+        public string DeviceId { get; set; } = string.Empty;
         public string DeviceSerialNumber { get; set; } = string.Empty;
         public string DeviceModelName { get; set; } = string.Empty;
         
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; } = string.Empty;
         public string CustomerName { get; set; } = string.Empty;
         public string? CustomerPhone { get; set; }
         
-        public int StatusId { get; set; }
+        public string StatusId { get; set; } = string.Empty;
         public string StatusName { get; set; } = string.Empty;
         public string? StatusColorCode { get; set; }
         
-        public int? VendorId { get; set; }
+        public string? VendorId { get; set; }
         public string? VendorName { get; set; }
         
         public string ProblemDescription { get; set; } = string.Empty;
@@ -30,10 +30,10 @@ namespace RMA.Shared.DTOs
 
     public class RmaTicketCreateDto
     {
-        public int DeviceId { get; set; }
-        public int CustomerId { get; set; }
-        public int StatusId { get; set; }
-        public int? VendorId { get; set; }
+        public string DeviceId { get; set; } = string.Empty;
+        public string CustomerId { get; set; } = string.Empty;
+        public string StatusId { get; set; } = string.Empty;
+        public string? VendorId { get; set; }
         public string ProblemDescription { get; set; } = string.Empty;
         public string? ServiceMode { get; set; }
         public bool IsUrgent { get; set; }
@@ -42,8 +42,8 @@ namespace RMA.Shared.DTOs
 
     public class RmaTicketUpdateStatusDto
     {
-        public int StatusId { get; set; }
-        public int LocationId { get; set; }
+        public string StatusId { get; set; } = string.Empty;
+        public string LocationId { get; set; } = string.Empty;
         public string? Note { get; set; }
     }
 }

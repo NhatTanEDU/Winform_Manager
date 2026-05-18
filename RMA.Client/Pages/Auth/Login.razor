@@ -4,6 +4,7 @@
 @inject AuthenticationStateProvider AuthStateProvider
 @inject NavigationManager NavigationManager
 @inject ISnackbar Snackbar
+@inject HttpClient Http
 
 <MudContainer MaxWidth="MaxWidth.Small">
     <MudPaper Elevation="8" Class="pa-8 d-flex flex-column align-center rounded-xl" Style="background-color: #ffffff; border-top: 5px solid #0072BC;">
@@ -79,10 +80,10 @@
                 </MudText>
             </div>
             
-            <div class="mt-4 pa-3 rounded text-center" style="background-color: #fff3cd; border: 1px dashed #ffe69c;">
-                <MudText Typo="Typo.caption" Style="color: #856404;">
+            <div class="mt-4 pa-3 rounded text-center" style="background-color: #e3f2fd; border: 1px dashed #90caf9;">
+                <MudText Typo="Typo.caption" Style="color: #0d47a1;">
                     <MudIcon Icon="@Icons.Material.Filled.Info" Size="Size.Small" Class="mr-1" Style="vertical-align: text-bottom;" />
-                    Mock Data Mode: Use any username/password.
+                    Test Account: admin / admin123
                 </MudText>
             </div>
         </MudForm>
@@ -123,15 +124,36 @@
         {
             _isLoading = true;
             
-            // Simulate network/validation delay
-            await Task.Delay(1000);
+            Console.WriteLine($"[Login] Bắt đầu gọi API đăng nhập cho tài khoản: '{_model.Username}'");
             
-            // Call our mock auth provider
-            if (AuthStateProvider is MockAuthStateProvider mockProvider)
+            try
             {
-                mockProvider.MarkUserAsAuthenticated(_model.Username);
-                Snackbar.Add($"Welcome back, {_model.Username}!", Severity.Success);
-                NavigationManager.NavigateTo("/");
+                // Gọi API backend
+                var response = await Http.PostAsJsonAsync("api/auth/login", _model);
+                
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadFromJsonAsync<LoginResult>();
+                    Console.WriteLine($"[Login] Đăng nhập thành công! Token: {result?.token?.Substring(0, 15)}...");
+                    
+                    // Cập nhật trạng thái giao diện (Tạm thời dùng Mock Provider)
+                    if (AuthStateProvider is MockAuthStateProvider mockProvider)
+                    {
+                        mockProvider.MarkUserAsAuthenticated(_model.Username);
+                        Snackbar.Add($"Đăng nhập thành công!", Severity.Success);
+                        NavigationManager.NavigateTo("/");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"[Login] Đăng nhập thất bại. Trạng thái HTTP: {response.StatusCode}");
+                    Snackbar.Add("Sai tài khoản hoặc mật khẩu.", Severity.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[Login] Lỗi kết nối tới Server: {ex.Message}");
+                Snackbar.Add("Lỗi kết nối tới Server. Vui lòng kiểm tra backend.", Severity.Error);
             }
             
             _isLoading = false;
@@ -142,5 +164,11 @@
     {
         public string Username { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
+    }
+    
+    public class LoginResult
+    {
+        public string token { get; set; } = string.Empty;
+        public string message { get; set; } = string.Empty;
     }
 }

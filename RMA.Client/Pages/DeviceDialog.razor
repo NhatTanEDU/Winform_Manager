@@ -1,0 +1,62 @@
+@using RMA.Shared.DTOs
+@inject RMA.Client.Services.CustomerService CustomerService
+@inject RMA.Client.Services.ReferenceDataService ReferenceService
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <DialogContent>
+        <MudForm @ref="form" @bind-IsValid="@success">
+            <MudTextField @bind-Value="Device.SerialNumber" Label="Số Serial (S/N)" Required="true" RequiredError="Serial là bắt buộc!" />
+            
+            <MudSelect T="string" Label="Khách hàng" @bind-Value="Device.CustomerId" Required="true" RequiredError="Chọn khách hàng!">
+                @foreach (var c in customers)
+                {
+                    <MudSelectItem Value="@c.Id">@c.Name</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudSelect T="string" Label="Model thiết bị" @bind-Value="Device.ModelId" Required="true" RequiredError="Chọn model!">
+                @foreach (var m in models)
+                {
+                    <MudSelectItem Value="@m.Id">@($"{m.Brand} - {m.ModelName}")</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudDatePicker Label="Ngày mua" @bind-Date="Device.PurchaseDate" />
+            <MudDatePicker Label="Ngày hết hạn bảo hành" @bind-Date="Device.WarrantyExpiry" />
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Hủy</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit" Disabled="@(!success)">Lưu</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] IMudDialogInstance MudDialog { get; set; } = null!;
+
+    public DeviceCreateDto Device { get; set; } = new DeviceCreateDto();
+
+    private List<CustomerDto> customers = new();
+    private List<ModelDto> models = new();
+
+    bool success;
+    MudForm form = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        customers = await CustomerService.GetCustomersAsync();
+        models = await ReferenceService.GetModelsAsync();
+    }
+
+    void Submit()
+    {
+        form.Validate();
+        if (form.IsValid)
+        {
+            MudDialog.Close(DialogResult.Ok(Device));
+        }
+    }
+
+    void Cancel() => MudDialog.Cancel();
+}

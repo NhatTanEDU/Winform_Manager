@@ -1,0 +1,33 @@
+@using RMA.Shared.DTOs
+
+<MudDialog>
+    <DialogContent>
+        <MudForm @ref="form" @bind-IsValid="@success">
+            <MudTextField @bind-Value="Vendor.Name" Label="Tên hãng (Brand)" Required="true" RequiredError="Tên hãng là bắt buộc!" />
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Hủy</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit" Disabled="@(!success)">Lưu</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] IMudDialogInstance MudDialog { get; set; } = null!;
+
+    public VendorDto Vendor { get; set; } = new VendorDto();
+
+    bool success;
+    MudForm form = null!;
+
+    void Submit()
+    {
+        form.Validate();
+        if (form.IsValid)
+        {
+            MudDialog.Close(DialogResult.Ok(Vendor));
+        }
+    }
+
+    void Cancel() => MudDialog.Cancel();
+}

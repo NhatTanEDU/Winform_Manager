@@ -1,6 +1,19 @@
 @RMA.Server_HostAddress = http://localhost:5299
 
-GET {{RMA.Server_HostAddress}}/weatherforecast/
-Accept: application/json
+### Đăng nhập với Local Test Account
+# @name login
+POST {{RMA.Server_HostAddress}}/api/auth/login
+Content-Type: application/json
 
-###
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+### 
+
+@token = {{login.response.body.token}}
+
+### Test API bảo mật (Firebase / Local JWT)
+GET {{RMA.Server_HostAddress}}/api/auth/test
+Authorization: Bearer {{token}}
